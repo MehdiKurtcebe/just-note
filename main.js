@@ -45,8 +45,8 @@ function showNotes() {
     document.querySelectorAll(".note").forEach((li) => li.remove());
     notes.forEach((note, id) => {
         let filterDesc = note.description.replaceAll("\n", "<br/>");
-        let liTag = `<li class="note" onclick="updateNote(${id}, '${note.title}', '${filterDesc}')">
-                        <div class="details">
+        let liTag = `<li class="note">
+                        <div class="details" onclick="updateNote(${id}, '${note.title}', '${filterDesc}')">
                             <p>${note.title}</p>
                             <span>${filterDesc}</span>
                         </div>
