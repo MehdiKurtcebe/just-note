@@ -4,7 +4,7 @@ This is a simple notepad browser page with made just HTML, CSS and pure JavaScri
 
 ## How to Run?
 
-Just open the ### `main.html` file.
+Just open the `main.html` file.
 
 ## Screenshots
 
