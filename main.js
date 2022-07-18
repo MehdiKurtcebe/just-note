@@ -1,11 +1,3 @@
-const addBox = document.querySelector(".add-box"),
-    popupBox = document.querySelector(".popup-box"),
-    popupTitle = popupBox.querySelector("header p"),
-    closeIcon = popupBox.querySelector("header i"),
-    titleTag = popupBox.querySelector("input"),
-    descTag = popupBox.querySelector("textarea"),
-    addBtn = popupBox.querySelector("button");
-
 const months = [
     "January",
     "February",
@@ -20,6 +12,15 @@ const months = [
     "November",
     "December",
 ];
+
+const addBox   = document.querySelector(".add-box"),
+    popupBox   = document.querySelector(".popup-box"),
+    popupTitle = popupBox.querySelector("header p"),
+    closeIcon  = popupBox.querySelector("header i"),
+    titleTag   = popupBox.querySelector("input"),
+    descTag    = popupBox.querySelector("textarea"),
+    addBtn     = popupBox.querySelector("button");
+
 const notes = JSON.parse(localStorage.getItem("notes") || "[]");
 let isUpdate = false,
     updateId;
@@ -44,7 +45,7 @@ function showNotes() {
     document.querySelectorAll(".note").forEach((li) => li.remove());
     notes.forEach((note, id) => {
         let filterDesc = note.description.replaceAll("\n", "<br/>");
-        let liTag = `<li class="note">
+        let liTag = `<li class="note" onclick="updateNote(${id}, '${note.title}', '${filterDesc}')">
                         <div class="details">
                             <p>${note.title}</p>
                             <span>${filterDesc}</span>
