@@ -8,7 +8,8 @@
 }
 
 body {
-    background: #000;
+    background-image: url('./background.jpg');
+    background-size: cover;
 }
 
 ::selection {
@@ -28,7 +29,7 @@ body {
     list-style: none;
     border-radius: 5px;
     padding: 15px 20px 20px;
-    background: #404040;
+    background: rgba(64, 64, 64, 0.85);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -61,7 +62,7 @@ header,
 
 .add-box p {
     color: #fff;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 20px;
 }
 
@@ -69,6 +70,7 @@ header,
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .note .details {
@@ -100,15 +102,21 @@ header,
 
 .note p {
     color: #fff;
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .note span {
     display: block;
     color: #fff;
-    font-size: 16px;
+    font-size: 13px;
     margin-top: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .note .bottom-content {
@@ -181,7 +189,7 @@ header,
     z-index: 2;
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .popup-box .popup {
@@ -190,7 +198,7 @@ header,
     left: 50%;
     z-index: 3;
     width: 100%;
-    max-width: 400px;
+    max-width: 50%;
     justify-content: center;
     transform: translate(-50%, -50%) scale(0.95);
 }
@@ -210,6 +218,8 @@ header,
 
 .popup-box.show .popup {
     transform: translate(-50%, -50%) scale(1);
+    background-color: rgba(64, 64, 64, 0.8);
+    border-radius: 5px;
 }
 
 .popup .content {
@@ -227,7 +237,12 @@ header,
 .popup-box.show > .popup > .popup-content > form input,
 .popup-box.show > .popup > .popup-content > form textarea {
     color: #fff;
-    background-color: #404040;
+    background-color: rgba(64, 64, 64, 0.8);
+}
+
+.popup-box.show > .popup > .popup-content {
+    padding: 5%;
+    width: 100%;
 }
 
 .content header {
